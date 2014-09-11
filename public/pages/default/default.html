@@ -22,6 +22,11 @@ $('#content').html(html);</pre><br />
 </p>
 
 <p>
+  Client-side sessions (encrypted cookie):
+  <pre>this.session.counter: <span style="color:red">{{session.counter}}</span></pre>
+</p>
+
+<p>
   The controller is the context which is rendered:
   <textarea>{{dump this}}</textarea>
 </p>
@@ -46,7 +51,24 @@ $('#content').html(html);</pre><br />
 </p>
 
 <p>
-  Responsive styles are easy. See:
+  Some convenience methods/objects are available in the controller:
+  <ol>
+    <li><pre>this.redirect('/')</pre></li>
+    <li><pre>this.accessDenied()</pre></li>
+    <li><pre>this.pageNotFound()</pre></li>
+    <li><pre>this.session</pre></li>
+    <li><pre>this.ctx</pre></li>
+    <li><pre>this.params</pre></li>
+    <li><pre>this.layout</pre></li>
+    <li><pre>this.view</pre></li>
+    <li><pre>this.js.push('/my-script.min.js')</pre></li>
+    <li><pre>this.css.push('/my-styles.css')</pre></li>
+    <li><pre>this.less.push('/my-styles.less')</pre></li>
+  </ol>
+</p>
+
+<p>
+  This page is responsive. Breakpoints are defined here:
   <ol>
     <li><a href="/layouts/html5/html5.less">/public/layouts/html5/html5.less</a> (bottom of the file)</li>
     <li><a href="/layouts/html5/html5.js">/public/layouts/html5/html5.js</a></li>
