@@ -33,7 +33,7 @@ app.use(json({ pretty: false, param: 'pretty' }));
 
 // mount the pages
 app.use(mount('/', pages({
-  controllersDir: './controllers',
+  controllersDir: './controllers/pages',
   publicDir: './public',
   index: 'default'
 })));
