@@ -7,38 +7,39 @@
 {{/disclaimer}}
 
 <p>
+  The filename of this template is:
+  <pre>{{this.filename}}</pre>
+</p>
+
+
+<p>
+  Client-side encrypted sessions (reload page to increment):
+  <pre>this.session.counter: <span style="color:red">{{session.counter}}</span></pre>
+</p>
+
+<p>
+  The controller's <code>this</code> is the context which is rendered:
+  <textarea>{{dump this}}</textarea>
+</p>
+
+<p>
   The "build" is automatic when the server starts:
   <ol>
     <li>
-      All HTML templates are precompiled and can be rendered easily. 
-      <br /><br />
-      Try pasting this into your browser's javascript console:
-      <pre>var html = $.render('pages/default', {title:'Refresh!'});
-$('#content').html(html);</pre><br />
+      All LESS files are compiled into a single <a href="{{css}}">css file</a>.
     </li>
     <li>
-      All LESS files are compiled into a single <a href="{{css}}">css file</a>.
+      All HTML templates are precompiled and can be rendered easily. 
+      <br />
+      Paste this into your browser's javascript console and watch the headline change:
+      <pre>var html = $.render('pages/default', {title:'Refresh!'});
+$('#content').html(html);</pre><br />
     </li>
   </ol>
 </p>
 
 <p>
-  Client-side sessions (encrypted cookie):
-  <pre>this.session.counter: <span style="color:red">{{session.counter}}</span></pre>
-</p>
-
-<p>
-  The controller is the context which is rendered:
-  <textarea>{{dump this}}</textarea>
-</p>
-
-<p>
-  The filename of this template is:
-  <pre>{{this.filename}}</pre>
-</p>
-
-<p>
-  The $ indicates a parameter in the controller name. For example, take a look at:
+  A dollar sign <code>$</code> in the controller's filename indicates a parameter in the url. For example:
   <ol>
     <li>
       <pre>controllers/pages/@$username.js</pre>
