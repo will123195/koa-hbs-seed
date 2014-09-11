@@ -7,10 +7,10 @@ Features
 ========
 
 - No "build" (commit node_modules is recommended)
+- No route config (scans the file system for "pages" / dynamic urls)
 - Precompiles your handlebars templates (for both nodejs and browser)
 - Precompiles LESS files into a single CSS file
-- No routes (scans the file system for "pages")
-- Or
+- Encrypted client-side sessions
 
 
 Install
