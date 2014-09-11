@@ -26,7 +26,9 @@ n latest
 npm install
 ```
 
-Then:
+Run
+===
+
 ```
 npm start
 ```
