@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{{newrelic}}}
+
+  <title>{{title}}</title>
+
+{{#each css}}
+  <link rel="stylesheet" href="{{.}}" />{{/each}}
+
+  <link rel="shortcut icon" href="/favicon.ico?d" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico?d" type="image/x-icon">
+
+  <style>
+{{style}}
+  </style>
+</head>
+<body>
+
+{{#unless hideNav}}
+  <header class="clear">
+
+    <a href="/inbox" id="logo"><div class="logo"><span class="logo-hash">#</span>chnnl</div></a>
+
+    <nav class="clear">
+
+      <a href="/compose">
+        <div class="compose-icon icon"></div>
+        <div class="label {{#when 'this.tab == "compose"'}}active{{/when}}">New Msg</div>
+      </a>
+      <a href="/inbox">
+        <div class="inbox-icon icon"></div>
+        <div class="label {{#when 'this.tab == "inbox"'}}active{{/when}}">Inbox</div>
+      </a>
+      <a href="/channels">
+        <div class="channels-icon icon"></div>
+        <div class="label {{#when 'this.tab == "channels"'}}active{{/when}}">Channels</div>
+      </a>
+
+      <div class="login">
+      {{#login}}
+        <img src="{{avatar}}?w=35&h=35&fit=crop&mask=ellipse&auto=true" class="avatar" />
+        <a href="/profile">{{fname}} {{lname}}</a>
+        <a href="/logout">log out</a>
+      {{/login}}
+      </div>
+
+    </nav>
+  </header>
+{{/unless}}
+
+
+  <section id="content">
+
+{{{content}}}
+
+  </section>
+
+
+  <div id="debug"></div>
+
+
+  <script type="text/javascript" src="//use.typekit.net/avc4ine.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+  {{#each js}}
+  <script src="{{.}}"></script>{{/each}}
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44029858-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+  </script>
+
+
+
+  <script>
+    // https://www.uservoice.com/o/javascript-sdk
+    UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/09reDrMo8BxEoPXl2oWng.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+    UserVoice.push(['set', {
+      accent_color: '#808283',
+      trigger_color: 'white',
+      trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+    }]);
+    // Identify the user and pass traits
+    // To enable, replace sample data with actual user traits and uncomment the line
+    UserVoice.push(['identify', {
+      id: '{{login.id}}'
+    }]);
+    // Add default trigger to the bottom-right corner of the window:
+    UserVoice.push(['addTrigger', { mode: 'smartvote', trigger_position: 'top-right' }]);
+    // Or, use your own custom trigger:
+    //UserVoice.push(['addTrigger', '#id', { mode: 'smartvote' }]);
+  </script>
+
+</body>
+</html>

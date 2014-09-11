@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>{{title}}</title>
+
+{{#each css}}
+  <link rel="stylesheet" href="{{.}}" />{{/each}}
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <style>
+{{style}}
+  </style>
+</head>
+<body>
+
+<div id="content">
+{{{content}}}
+</div>
+
+  {{#each js}}
+  <script src="{{.}}"></script>{{/each}}
+
+</body>
+</html>

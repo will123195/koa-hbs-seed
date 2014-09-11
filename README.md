@@ -1,4 +1,12 @@
 koa-hbs-seed
 ============
 
-Seed repo for a koa handlebars website.
+Seed website using koa + handlebars + jquery.
+
+
+Install
+=======
+
+```
+npm run setup
+```

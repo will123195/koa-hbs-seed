@@ -1,0 +1,54 @@
+<h1>{{title}}</h1>
+
+<a href="/">home</a>
+
+{{#disclaimer}}
+<div class="disclaimer">{{.}}</div>
+{{/disclaimer}}
+
+<p>
+  <ol>
+    <li>
+      All HTML templates are precompiled and can be rendered easily. 
+      <br /><br />
+      Try pasting this into your console:
+      <pre>var html = $.render('pages/default', {title:'Refresh!'});
+$('#content').html(html);</pre><br />
+    </li>
+    <li>
+      All LESS files are compiled into a single <a href="{{css}}">css file</a>.
+    </li>
+  </ol>
+</p>
+
+<p>
+  The controller is the context which is rendered:
+  <textarea>{{dump this}}</textarea>
+</p>
+
+<p>
+  The filename of this template is:
+  <pre>{{this.filename}}</pre>
+</p>
+
+<p>
+  The $ indicates a parameter in the controller name. For example, take a look at:
+  <pre>controllers/@$username.js</pre>
+  <pre>controllers/my-folder/$something.js</pre>
+  <ol>
+    <li>
+      <a href="/@me123">/@me123</a>
+    </li>
+    <li>
+      <a href="/my-folder/anything">/my-folder/anything</a>
+    </li>
+  </ol>
+</p>
+
+<p>
+  This page is responsive. See:
+  <ol>
+    <li><a href="/layouts/html5/html5.less">/public/layouts/html5/html5.less</a></li>
+    <li><a href="/layouts/html5/html5.js">/public/layouts/html5/html5.js</a></li>
+  </ol>
+</p>
