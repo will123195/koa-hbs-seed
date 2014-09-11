@@ -1,16 +1,17 @@
 koa-hbs-seed
 ============
 
-Seed website using koa + handlebars + jquery.
+Seed website using Koa + Handlebars + LESS + jQuery.
 
 Features
 ========
 
-- No "build" (commit node_modules is recommended)
-- No route config (scans the file system for "pages" / dynamic urls)
+- Koa generators
+- No "build" (committing `node_modules` is recommended)
+- No routes config (scans the file system for "pages" / dynamic urls)
 - Precompiles your handlebars templates (for both nodejs and browser)
-- Precompiles LESS files into a single CSS file
-- Encrypted client-side sessions
+- Precompiles LESS files together into a single CSS file
+- Encrypted cookie-based client-side sessions
 
 
 Install
